@@ -22,28 +22,14 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           chunks: 'initial',
-        },
+        }
       },
-    },
+    }
   },
   module: {
     rules: [
       // vue
       { test: /\.vue$/, use: 'vue-loader' },
-      // less
-      {
-        test: /\.less$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'less-loader',
-        ],
-      },
-      // css
-      {
-        test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader'],
-      },
       // js
       {
         test: /\.js$/,
@@ -59,7 +45,21 @@ module.exports = {
         enforce: 'pre',
         test: /\.(vue|js)$/,
         exclude: /node_modules/,
-        use: 'eslint-loader',
+        use: 'eslint-loader'
+      },
+      // less
+      {
+        test: /\.less$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+      },
+      // css
+      {
+        test: /\.css$/,
+        use: ['vue-style-loader', 'css-loader'],
       },
       // images
       {
