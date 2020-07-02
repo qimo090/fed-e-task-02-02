@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "cross-env webpack-dev-server --config webpack.dev.js",
     "build": "cross-env webpack --config webpack.prod.js",
-    "lint": "eslint --ext .js,.vue src --fix"
+    "lint": "eslint --ext .js,.vue src"
   },
   "husky": {
     "hooks": {
