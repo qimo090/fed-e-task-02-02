@@ -17,15 +17,20 @@ Part 2 | Mod 2
 不同：
 
 - loader
+
   主要用于模块代码的转化，因为 webpack 原生只识别 js 和 json 格式的文件，其他格式的文件需要通过对应的 loader 进行转化，使 webpack 能被识别并进行处理
+
 - plugin
+
   解决 loader 无法实现的其他事，从打包优化和压缩，到重新定义环境变量，功能强大到可以用来处理各种各样的任务。
 
 开发：
 
 - loader
+
   loader 在我看来就是一个管道，文件内容通过一个个 loader 管道进行处理
   最简单的 loader 如下，文件代码流进来，经过某些处理再返回出去，交给下一个 loader
+
   ```js
   module.exports = function (source) {
     // source 为 compiler 传递给 Loader 的一个文件的原内容
@@ -33,7 +38,9 @@ Part 2 | Mod 2
     return source
   }
   ```
+
 - plugin
+
   plugin 其实就是一个类，它需要实现一个 apply 方法，apply 方法的第一个参数是 compiler
   一个最简单的 plugin 如下
 
