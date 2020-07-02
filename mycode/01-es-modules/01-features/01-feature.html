@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ES Modules - 模块特性</title>
+</head>
+
+<body>
+  <!-- 通过给 script 标签添加 type="module" 属性，就可以以 ES Modules 的标准执行 script 标签里面的代码了 -->
+  <script type="module">
+    console.log('this is es module')
+  </script>
+
+  <!-- 1. es modules 自动采用严格模式 -->
+  <script>
+    console.log(this)
+  </script>
+  <script type="module">
+    console.log(this)
+  </script>
+  <!-- 2. 每个 es module 都是运行在私有的作用域里面 -->
+  <script type="module">
+    var foo = 'bar'
+    console.log(foo)
+  </script>
+  <script type="module">
+    console.log(foo)
+  </script>
+  <!-- 3. esm 是通过 cors 的方式请求外部 js 模块的 -->
+  <script type="module" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script type="module" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- 4. ESM 的 script 标签会延迟执行脚本 -->
+  <script type="module">
+    console.log(2)
+  </script>
+  <script>
+    console.log(1)
+  </script>
+</body>
+
+</html>
