@@ -8,6 +8,9 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
+const a = 123
+console.log(asdfasdf)
+
 export default {
   name: 'App',
   components: {

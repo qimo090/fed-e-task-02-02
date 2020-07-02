@@ -22,9 +22,9 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           chunks: 'initial',
-        }
+        },
       },
-    }
+    },
   },
   module: {
     rules: [
@@ -54,6 +54,12 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
+      },
+      {
+        enforce: 'pre',
+        test: /\.(vue|js)$/,
+        exclude: /node_modules/,
+        use: 'eslint-loader',
       },
       // images
       {
